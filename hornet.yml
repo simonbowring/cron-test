@@ -1,0 +1,22 @@
+services:
+  test:
+    type: kubernetes-cron-job
+    context: docker-desktop
+    image: busybox
+    stages:
+      production:
+        job-template:
+          apiVersion: batch/v1beta1
+          kind: CronJob
+          spec:
+            schedule: "*/1 * * * *"
+            jobTemplate:
+              spec:
+                template:
+                  spec:
+                    containers:
+                    - args:
+                      - /bin/sh
+                      - -c
+                      - date; echo Hello from the Kubernetes cluster
+                    restartPolicy: OnFailure
