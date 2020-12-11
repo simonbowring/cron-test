@@ -5,7 +5,7 @@ services:
     image: busybox
     stages:
       production:
-        job-template:
+        cron-job-template:
           apiVersion: batch/v1beta1
           kind: CronJob
           spec:
