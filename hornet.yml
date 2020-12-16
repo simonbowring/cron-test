@@ -2,7 +2,7 @@ services:
   test:
     type: kubernetes-cron-job
     context: docker-desktop
-    image: busybox
+    image: gcr.io/google-containers/busybox
     stages:
       production:
         cron-job-template:
