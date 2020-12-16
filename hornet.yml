@@ -18,5 +18,5 @@ services:
                     - args:
                       - /bin/sh
                       - -c
-                      - date; echo Hello from the Kubernetes cluster
+                      - date; echo Hello from the Kubernetes cluster; sleep 60
                     restartPolicy: OnFailure
